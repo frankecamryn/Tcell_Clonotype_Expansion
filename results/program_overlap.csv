@@ -1,0 +1,6 @@
+program,n_in_panel,n_hits_in_top50,hits
+Cytotoxic effector,14,9,"CCL4, GNLY, GZMB, GZMH, GZMK, HOPX, NKG7, XCL1, XCL2"
+Tissue-resident memory,6,2,"RGS1, ZNF683"
+Exhaustion / dysfunction,9,1,BATF
+Naive / central memory,5,3,"CCR7, IL7R, SELL"
+Regulatory T,5,0,
