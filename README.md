@@ -52,15 +52,14 @@ Each DL model has a hyperparameter sweep selected on **val AUROC**; test set is 
 final_project/
 ├── README.md
 ├── requirements.txt
-├── data/                                 # processed data
+├── data/                                 
 ├── notebooks/
 │   ├── 01_download_and_explore.ipynb
 │   ├── 02_preprocessing.ipynb
-│   ├── 03_train_models.ipynb             # minimal scaffold
-│   ├── 03_train_models_draft.ipynb       # complete pipeline with HP sweep + extra experiments
+│   ├── 03_train_models.ipynb
 │   ├── 04_evaluation_interpretation.ipynb
 │   └── 05_multitask_model.ipynb
-├── src/                                  # reusable modules imported by notebooks
+├── src/                                  # reusable functions+modules imported by notebooks
 │   ├── data.py                           # GEO download, MTX loading, label/split construction, QC, HVG
 │   ├── models.py                         # MLPClassifier, SupervisedAutoencoder, MultiTaskModel
 │   ├── train.py                          # training loops, predict_*, encode_latents
