@@ -59,7 +59,7 @@ final_project/
 │   ├── 03_train_models.ipynb
 │   ├── 04_evaluation_interpretation.ipynb
 │   └── 05_multitask_model.ipynb
-├── src/                                  # reusable functions+modules imported by notebooks
+├── src/                            # reusable functions+modules imported by notebooks
 │   ├── data.py                           # GEO download, MTX loading, label/split construction, QC, HVG
 │   ├── models.py                         # MLPClassifier, SupervisedAutoencoder, MultiTaskModel
 │   ├── train.py                          # training loops, predict_*, encode_latents
