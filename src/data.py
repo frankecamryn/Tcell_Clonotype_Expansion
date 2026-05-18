@@ -2,12 +2,12 @@
 Data loading and preprocessing for GSE139555 (Wu et al. 2020).
 
 Pipeline:
-    raw cellranger MTX (per sample)  -->  per-sample AnnData
-    concatenate across samples       -->  combined AnnData
-    join with TCR metadata           -->  obs columns (patient, tissue, clonotype, ... etc)
-    build expansion label per patient (clonotype freq >= 2 = expanded)
-    QC + normalize + select HVGs
-    patient-stratified train/val/test split
+    -raw cellranger MTX (per sample)  -->  per-sample AnnData
+    -concatenate across samples       -->  combined AnnData
+    -join with TCR metadata           -->  obs columns (patient, tissue, clonotype, ... etc)
+    -build expansion label per patient (clonotype freq >= 2 = expanded)
+    -QC + normalize + select HVGs
+    -patient-stratified train/val/test split
 """
 
 from __future__ import annotations
