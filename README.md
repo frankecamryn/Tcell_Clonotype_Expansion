@@ -1,10 +1,10 @@
 # Predicting Clonal Expansion of Tumor-Infiltrating T Cells from scRNA-seq
 
-**Camryn Franke**
+  **Camryn Franke**
 
-**Deep Learning in Genomics Final Project** 
+  **Deep Learning in Genomics Final Project** 
 
-**May 18 2026**
+  **May 18 2026**
 
 ## Question
 Can gene expression alone predict whether a T cell belongs to an *expanded* TCR clonotype (≥2 cells sharing the same clonotype) versus a singleton?
