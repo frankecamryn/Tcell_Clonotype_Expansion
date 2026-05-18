@@ -2,7 +2,7 @@
 
 **Camryn Franke**
 
-**Deep Learning in Genomics, Final Project** 
+**Deep Learning in Genomics Final Project** 
 
 **May 18 2026**
 
