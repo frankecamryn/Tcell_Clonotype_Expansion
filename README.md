@@ -1,7 +1,10 @@
 # Predicting Clonal Expansion of Tumor-Infiltrating T Cells from scRNA-seq
 
-**Author:** Camryn Franke
-**Course:** Deep Learning in Genomics — Final Project (2026)
+**Camryn Franke**
+
+**Deep Learning in Genomics, Final Project** 
+
+**May 18 2026**
 
 ## Question
 Can gene expression alone predict whether a T cell belongs to an *expanded* TCR clonotype (≥2 cells sharing the same clonotype) versus a singleton?
@@ -18,8 +21,8 @@ Expanded tumor-infiltrating T cells occupy distinct transcriptional states, enri
 - 141,623 T cells with paired scRNA-seq + TCR-seq
 
 Files used (downloaded automatically in nb01):
-- `GSE139555_RAW.tar` — per-sample cellranger MTX matrices
-- `GSE139555_tcell_metadata.txt.gz` — per-cell metadata including TCR clonotype, cell-state cluster (`ident`), tissue (`source`), patient
+- `GSE139555_RAW.tar` : per-sample cellranger MTX matrices (download directly from GEO)
+- `GSE139555_tcell_metadata.txt.gz` : per-cell metadata including TCR clonotype, cell-state cluster (`ident`), tissue (`source`), patient
 
 ## Pipeline
 
@@ -28,10 +31,8 @@ Files used (downloaded automatically in nb01):
 | `01_download_and_explore.ipynb` | Download from GEO, load MTX per sample, merge with TCR metadata | `data/raw_combined.h5ad` |
 | `02_preprocessing.ipynb` | QC, normalize, select 2,000 HVGs, build `expanded` label, patient-stratified train/val/test split | `data/processed.h5ad` |
 | `03_train_models_draft.ipynb` | Train + evaluate models: LogReg, MLP, supervised autoencoder (SAE), XGBoost. Includes HP sweep and the additional SAE experiments that were tried. | `results/predictions.pkl`, `results/models/{mlp,sae}.pt`, comparison CSVs |
-| `05_multitask_model.ipynb` | Multitask deep model — shared encoder with three heads (expanded / clone-size bin / cell state). Adds the multitask row to `predictions.pkl`. | `results/multitask_predictions.pkl`, `results/models/multitask.pt` |
-| `04_evaluation_interpretation.ipynb` | All evaluation figures: model comparison, ROC/PR, stratified performance, clone-size calibration, SAE + multitask latent UMAPs, gene importance (standardized LogReg + input×gradient + XGBoost gain), cross-model consensus, biology overlap. | `results/figures/*.png`, gene importance CSVs |
-
-**Recommended run order:** 01 → 02 → 03 → 05 → 04. (nb04 runs cleanly without nb05 too — multitask sections are gated on the file's presence.)
+| `04_multitask_model.ipynb` | Multitask deep model — shared encoder with three heads (expanded / clone-size bin / cell state). Adds the multitask row to `predictions.pkl`. | `results/multitask_predictions.pkl`, `results/models/multitask.pt` |
+| `05_evaluation_interpretation.ipynb` | All evaluation figures: model comparison, ROC/PR, stratified performance, clone-size calibration, SAE + multitask latent UMAPs, gene importance (standardized LogReg + input×gradient + XGBoost gain), cross-model consensus, biology overlap. | `results/figures/*.png`, gene importance CSVs |
 
 ## Models compared
 
